@@ -744,6 +744,50 @@ class Api extends ApiManager {
     const imageId = id;
     return this._execute(props, `images/${imageId}`, onSuccess, onFailure);
   };
+
+  getCrudRequest = (entity, props = {}) => {
+    const {
+      onSuccess: userOnSuccess,
+      onFailure: userOnFailure,
+      onFinally: userOnFinally,
+      config = {},
+      noStoreRedux = false,
+      ...otherProps
+    } = props;
+    const queryParams = { ...otherProps };
+
+    const queryString = Object.keys(queryParams)
+      .map(
+        (key) =>
+          `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`,
+      )
+      .join('&');
+
+    const url = queryString
+      ? `api/cms/${entity}?${queryString}`
+      : `api/cms/${entity}`;
+
+    const onSuccess = (response) => {
+      typeof userOnSuccess === 'function' && userOnSuccess(response);
+    };
+
+    const onFailure = (error) => {
+      store.dispatch(
+        Actions.addPopup({
+          type: popupTypes.API_ERROR,
+          payload: { text: error?.response?.data?.error },
+        }),
+      );
+      typeof userOnFailure === 'function' && userOnFailure(error);
+    };
+
+    const executeProps = { config: { ...config, method: 'GET' } };
+    return this._execute(executeProps, url, onSuccess, onFailure).finally(
+      () => {
+        typeof userOnFinally === 'function' && userOnFinally();
+      },
+    );
+  };
 }
 
 const instance = new Api();
