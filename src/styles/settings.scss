@@ -1,0 +1,96 @@
+/* colors */
+$background-color: #f3f8fd;
+$background-color: #ffffff;
+$popup-background: #e8dfbc;
+$loader-color: #000000;
+$text-color: #000000;
+$grey-divider: #e7e8e4;
+$dark-grey: #565555;
+$text-black: #0c0803;
+$input-border: #b7b7b7;
+$input-disabled-border: #c7c7c7;
+$light-grey: #f4f4f4;
+$light-gray: #eaeaea;
+$black: #000;
+$black-hover: #383838;
+$white: #fff;
+$loader-color: #050631;
+
+$primary: $black;
+$primary-hover: $black-hover;
+$primary-disabled: #232323;
+
+// STATUSES
+$status-leads-agent: #ffffae;
+$status-leads-document: #aeefff;
+$status-leads-signature: #ffdfae;
+$status-leads-blocked: #ffa9a9;
+$status-leads-new: #eeeeee;
+$status-leads-ok: #8fe98f;
+
+$status-general-success: #009944;
+$status-general-error: #cf000f;
+$status-general-warning: #f5994f;
+
+$qualla-blue: #23445a;
+$qualla-blue-hover: #2d5875;
+$react-teal: #61dafb;
+$orange: #ff9900;
+
+
+$ui-text-error: #DF1B41;
+
+// CHECKBOX COLORS
+$checkbox-color: $qualla-blue;
+$checkbox-disable-color: #696969;
+
+// LEAD HEADER
+$lead-header-background: #d9e2f3;
+
+// SERVICES
+$service-package-color: #646464;
+
+// LEAD AGENT NOTES
+$block-customer-background: #cf000f;
+$block-customer-background-hover: #ff3845;
+$create-customer-manually-background: hsl(120, 72%, 67%);
+$create-customer-manually-background-hover: hsl(120, 100%, 75%);
+$create-customer-manually-background-disabled: grayscale($create-customer-manually-background);
+$not-approved-background: #40e0d0;
+$agent-notes-transition: 400ms;
+
+// AGENT NOTES
+$note-container-border-color: #c8c8c8;
+$note-container-border-color-hover: darken($note-container-border-color, 10%);
+$note-container-background-color: #fafafa;
+$note-container-background-color-hover: darken($note-container-background-color, 5%);
+$note-container-shadow: 3px 3px 4px -4px rgba(0, 0, 0, 0.5);
+$note-date-color: #808080;
+$note-text-bottom-border-color: $note-date-color;
+
+$input-disabled-text-color: #545454;
+$input-disabled-color: #f5f5f5;
+$error-message-color: $block-customer-background;
+
+$id-image-button-bg: #009944;
+$id-image-button-bg-hover: #00ad4e;
+
+/* Fonts */
+$font: "Ploni Regular";
+$font-bold: "Ploni Bold";
+$font-light: "Ploni Light";
+
+$border-radius: 10;
+
+/* break points */
+$mobile: 320;
+$tablet: 768;
+$desktop: 1200;
+$desktop_large: 1500;
+$desktop-max: 1920;
+
+/* media queries */
+$media-tablet: $tablet + px;
+$media-desktop: $desktop + px;
+$media-desktop_large: $desktop_large + px;
+$media-desktop-max: $desktop-max + px;

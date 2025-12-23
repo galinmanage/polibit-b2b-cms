@@ -1,0 +1,192 @@
+@import "/src/styles/imports.scss";
+
+$current: $mobile;
+
+.mt-30 {
+  margin-top: vw_size(30, $current);
+}
+
+.new-field-popup-wrapper {
+  width: 100%;
+  height: vw_size(500, $current);
+  overflow: auto;
+
+  .popup-header {
+    border-radius: vw_size(25, $current) vw_size(25, $current) 0 0;
+    display: flex;
+    justify-content: center;
+    padding: vw_size(10, $current) 0;
+    background-color: $qualla-blue;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      height: vw_size(3, $current);
+      width: 100%;
+      background: $orange;
+    }
+
+    .new-field-headline {
+      color: $white;
+      font-family: $font-bold;
+      font-size: vw_size(24, $current);
+      margin: unset;
+      padding: unset;
+    }
+  }
+
+  .new-field-form {
+    width: 100%;
+    padding: vw_size(18, $current);
+    min-height: vw_size(438, $current);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: vw_size(10, $current);
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .new-field-input {
+        flex-basis: 30%;
+      }
+    }
+
+    .add-field {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .mt-30 {
+    margin-top: vw_size(30, $current);
+  }
+  .new-field-popup-wrapper {
+    width: vw_size(400, $current);
+    height: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      justify-content: flex-start;
+      padding: vw_size(10, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .new-field-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .new-field-form {
+      padding: vw_size(18, $current);
+      padding-bottom: vw_size(20, $current);
+      min-height: vw_size(438, $current);
+      margin-top: vw_size(10, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .mt-30 {
+    margin-top: vw_size(30, $current);
+  }
+  .new-field-popup-wrapper {
+    width: vw_size(500, $current);
+    height: vw_size(600, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      justify-content: flex-start;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .new-field-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .new-field-form {
+      @include hide-scrollbar;
+      padding: vw_size(18, $current);
+      min-height: vw_size(500, $current);
+      margin-top: vw_size(10, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+  .mt-30 {
+    margin-top: vw_size(30, $current);
+  }
+  .new-field-popup-wrapper {
+    width: vw_size(500, $current);
+    height: vw_size(600, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      justify-content: flex-start;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .new-field-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .new-field-form {
+      padding: vw_size(18, $current);
+      min-height: vw_size(500, $current);
+      margin-top: vw_size(10, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+
+  .mt-30 {
+    margin-top: vw_size(30, $current);
+  }
+  .new-field-popup-wrapper {
+    width: vw_size(500, $current);
+    height: vw_size(600, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      justify-content: flex-start;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .new-field-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .new-field-form {
+      padding: vw_size(25, $current) vw_size(18, $current) vw_size(18, $current) vw_size(18, $current);
+      min-height: vw_size(500, $current);
+      margin-top: vw_size(10, $current);
+    }
+  }
+}

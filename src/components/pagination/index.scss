@@ -1,0 +1,185 @@
+@import '/src/styles/imports.scss';
+
+$current: $mobile;
+.pagination-wrapper {
+  direction: ltr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: vw_size(10, $current) 0;
+  height: vw_size(30, $current);
+
+  .dots {
+    font-size: vw_size(14, $current);
+    margin-inline: vw_size(5, $current);
+  }
+
+  .page-number {
+    border: 1px solid $input-border;
+    border-radius: 50%;
+    min-width: vw_size(16, $current);
+    height: vw_size(16, $current);
+    margin-inline: vw_size(2.5, $current);
+    font-size: vw_size(10, $current);
+    transition: 0.3s;
+
+    &.current {
+      background-color: $qualla-blue;
+      color: $white;
+      font-family: $font-bold;
+      padding: vw_size(5, $current);
+      min-width: vw_size(24, $current);
+      height: vw_size(24, $current);
+      font-size: vw_size(14, $current);
+    }
+
+    &.sibling {
+      background-color: rgba(125, 125, 125, 0.4);
+      padding: vw_size(2, $current);
+      min-width: vw_size(20, $current);
+      height: vw_size(20, $current);
+      font-size: vw_size(12, $current);
+    }
+
+    &.far-sibling {
+      background-color: rgba(125, 125, 125, 0.2);
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .pagination-wrapper {
+    margin: vw_size(10, $current) 0;
+    height: vw_size(30, $current);
+
+    .dots {
+      font-size: vw_size(14, $current);
+      margin-inline: vw_size(5, $current);
+    }
+
+    .page-number {
+      min-width: vw_size(16, $current);
+      height: vw_size(16, $current);
+      margin-inline: vw_size(2.5, $current);
+      font-size: vw_size(10, $current);
+
+      &.current {
+        padding: vw_size(5, $current);
+        min-width: vw_size(24, $current);
+        height: vw_size(24, $current);
+        font-size: vw_size(14, $current);
+      }
+
+      &.sibling {
+        padding: vw_size(2, $current);
+        min-width: vw_size(20, $current);
+        height: vw_size(20, $current);
+        font-size: vw_size(12, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .pagination-wrapper {
+    justify-content: flex-start;
+    margin: vw_size(10, $current) 0;
+    height: vw_size(30, $current);
+
+    .dots {
+      font-size: vw_size(14, $current);
+      margin-inline: vw_size(5, $current);
+    }
+
+    .page-number {
+      min-width: vw_size(16, $current);
+      height: vw_size(16, $current);
+      margin-inline: vw_size(2.5, $current);
+      font-size: vw_size(10, $current);
+
+      &.current {
+        padding: vw_size(5, $current);
+        min-width: vw_size(24, $current);
+        height: vw_size(24, $current);
+        font-size: vw_size(14, $current);
+      }
+
+      &.sibling {
+        padding: vw_size(2, $current);
+        min-width: vw_size(20, $current);
+        height: vw_size(20, $current);
+        font-size: vw_size(12, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+  .pagination-wrapper {
+    margin: vw_size(10, $current) 0;
+    height: vw_size(30, $current);
+
+    .dots {
+      font-size: vw_size(14, $current);
+      margin-inline: vw_size(5, $current);
+    }
+
+    .page-number {
+      min-width: vw_size(16, $current);
+      height: vw_size(16, $current);
+      margin-inline: vw_size(2.5, $current);
+      font-size: vw_size(10, $current);
+
+      &.current {
+        padding: vw_size(5, $current);
+        min-width: vw_size(24, $current);
+        height: vw_size(24, $current);
+        font-size: vw_size(14, $current);
+      }
+
+      &.sibling {
+        padding: vw_size(2, $current);
+        min-width: vw_size(20, $current);
+        height: vw_size(20, $current);
+        font-size: vw_size(12, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+  .pagination-wrapper {
+    margin: vw_size(10, $current) 0;
+    height: vw_size(30, $current);
+
+    .dots {
+      font-size: vw_size(14, $current);
+      margin-inline: vw_size(5, $current);
+    }
+
+    .page-number {
+      min-width: vw_size(16, $current);
+      height: vw_size(16, $current);
+      margin-inline: vw_size(2.5, $current);
+      font-size: vw_size(10, $current);
+
+      &.current {
+        padding: vw_size(5, $current);
+        min-width: vw_size(24, $current);
+        height: vw_size(24, $current);
+        font-size: vw_size(14, $current);
+      }
+
+      &.sibling {
+        padding: vw_size(2, $current);
+        min-width: vw_size(20, $current);
+        height: vw_size(20, $current);
+        font-size: vw_size(12, $current);
+      }
+    }
+  }
+}

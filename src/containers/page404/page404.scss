@@ -1,0 +1,11 @@
+@import '/src/styles/imports.scss';
+
+$current: $mobile;
+
+.page-not-found-wrapper {
+  padding: vw_size(15, $current);
+
+  .title {
+    font-size: vw_size(24, $current);
+  }
+}

@@ -1,0 +1,128 @@
+@import '/src/styles/imports.scss';
+
+$current: $mobile;
+.filter-item-phantom {
+  height: vw_size(22, $current);
+  margin-bottom: vw_size(10, $current);
+}
+
+.filter-item-wrapper {
+  margin: 0 vw_size(10, $current);
+  padding: vw_size(5, $current) vw_size(15, $current);
+  border-radius: vw_size($border-radius, $current);
+  font-size: vw_size(12, $current);
+  border: 1px solid $qualla-blue;
+
+  .filter-text {
+    @include truncate-text(200);
+    display: flex;
+
+    .filter-key::after {
+      content: "\003A";
+    }
+  }
+
+  .remove-icon {
+    width: vw_size(10, $current);
+    height: vw_size(10, $current);
+    object-fit: contain;
+    margin-inline-start: vw_size(10, $current);
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .filter-item-phantom {
+    height: vw_size(22, $current);
+    margin-bottom: vw_size(10, $current);
+  }
+  .filter-item-wrapper {
+    margin: 0 vw_size(10, $current);
+    padding: vw_size(5, $current) vw_size(15, $current);
+    border-radius: vw_size($border-radius, $current);
+    font-size: vw_size(12, $current);
+
+    .remove-icon {
+      width: vw_size(10, $current);
+      height: vw_size(10, $current);
+      margin-inline-start: vw_size(10, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .filter-item-phantom {
+    height: vw_size(22, $current);
+    margin-bottom: vw_size(10, $current);
+  }
+  .filter-item-wrapper {
+    @include filter-comps-radius();
+    margin: 0 vw_size(10, $current);
+    padding: vw_size(5, $current) vw_size(15, $current);
+    font-size: vw_size(12, $current);
+    transition: background 400ms;
+    height: vw_size(30, $current);
+
+    .remove-icon {
+      width: vw_size(10, $current);
+      height: vw_size(10, $current);
+      margin-inline-start: vw_size(10, $current);
+    }
+
+    &:first-of-type {
+      margin-right: 0;
+    }
+
+    &:last-of-type {
+      margin-left: 0;
+    }
+
+    &:hover {
+      background-color: darken($white, 7%);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+
+  .filter-item-phantom {
+    height: vw_size(22, $current);
+    margin-bottom: vw_size(10, $current);
+  }
+  .filter-item-wrapper {
+    margin: 0 vw_size(10, $current);
+    padding: vw_size(5, $current) vw_size(15, $current);
+    font-size: vw_size(12, $current);
+    height: vw_size(30, $current);
+
+    .remove-icon {
+      width: vw_size(10, $current);
+      height: vw_size(10, $current);
+      margin-inline-start: vw_size(10, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+
+  .filter-item-phantom {
+    height: vw_size(22, $current);
+    margin-bottom: vw_size(10, $current);
+  }
+  .filter-item-wrapper {
+    margin: 0 vw_size(10, $current);
+    padding: vw_size(5, $current) vw_size(15, $current);
+    font-size: vw_size(12, $current);
+    height: vw_size(30, $current);
+
+    .remove-icon {
+      width: vw_size(10, $current);
+      height: vw_size(10, $current);
+      margin-inline-start: vw_size(10, $current);
+    }
+  }
+}

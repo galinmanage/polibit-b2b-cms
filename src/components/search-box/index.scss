@@ -1,0 +1,100 @@
+@import "/src/styles/imports.scss";
+
+$current: $mobile;
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .search-box-wrapper {
+    display: flex;
+    @include filter-comps-radius;
+    overflow: hidden;
+
+    .search-box-input {
+      @include filter-dropdown-style;
+      border: 1px solid $input-border;
+      padding: vw_size(10, $current) vw_size(5, $current);
+      border-top-right-radius: inherit;
+      border-bottom-right-radius: inherit;
+
+      &::placeholder {
+        @include filter-font-size;
+      }
+    }
+
+    .search-box-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: vw_size(40, $current);
+      background-color: $qualla-blue;
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+
+      .search-box-icon {
+        width: vw_size(14, $current);
+        height: vw_size(14, $current);
+        object-fit: cover;
+        fill: $white;
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .search-box-wrapper {
+    .search-box-input {
+      font-family: inherit;
+      padding: vw_size(10, $current) vw_size(12, $current);
+      height: vw_size(30, $current);
+    }
+
+    .search-box-button {
+      width: vw_size(40, $current);
+
+      .search-box-icon {
+        width: vw_size(14, $current);
+        height: vw_size(14, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+  .search-box-wrapper {
+    .search-box-input {
+      padding: vw_size(10, $current) vw_size(12, $current);
+      height: vw_size(30, $current);
+    }
+
+    .search-box-button {
+      width: vw_size(40, $current);
+
+      .search-box-icon {
+        width: vw_size(14, $current);
+        height: vw_size(14, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+  .search-box-wrapper {
+    .search-box-input {
+      padding: vw_size(10, $current) vw_size(12, $current);
+      height: vw_size(30, $current);
+    }
+
+    .search-box-button {
+      width: vw_size(40, $current);
+
+      .search-box-icon {
+        width: vw_size(14, $current);
+        height: vw_size(14, $current);
+      }
+    }
+  }
+}

@@ -1,0 +1,314 @@
+@import "styles/imports.scss";
+
+$current: $mobile;
+.new-user-popup-wrapper {
+  width: 100%;
+
+  .popup-header {
+    border-radius: vw_size(25, $current) vw_size(25, $current) 0 0;
+    display: flex;
+    justify-content: center;
+    padding: vw_size(10, $current) 0;
+    background-color: $qualla-blue;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      height: vw_size(3, $current);
+      width: 100%;
+      background: $orange;
+    }
+
+    .new-user-headline {
+      color: $white;
+      font-family: $font-bold;
+      font-size: vw_size(24, $current);
+      margin: unset;
+      padding: unset;
+    }
+  }
+
+  .new-user-form {
+    width: 100%;
+    padding-top: vw_size(15, $current);
+    min-height: vw_size(438, $current);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .new-user-input-field {
+      width: 80%;
+    }
+
+    .new-user-input-field {
+      height: vw_size(30, $current);
+      margin: vw_size(15, $current) 0;
+    }
+
+    .new-users-permissions-headline {
+      align-self: flex-start;
+      margin: 0 0 vw_size(15, $current);
+      padding-inline-start: 10%;
+    }
+
+    .new-user-permissions-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: vw_size(8, $current) vw_size(10, $current);
+
+      & > * {
+        margin: 0;
+      }
+    }
+
+    .leads-permissions-wrapper {
+      display: flex;
+      width: 80%;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .new-user-popup-wrapper {
+    width: vw_size(400, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      justify-content: flex-start;
+      padding: vw_size(10, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .new-user-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .new-user-form {
+      padding-top: vw_size(20, $current);
+      padding-bottom: vw_size(20, $current);
+      min-height: vw_size(438, $current);
+
+      .new-user-input-field {
+        height: vw_size(30, $current);
+        margin: vw_size(15, $current) 0;
+      }
+
+      .new-users-permissions-headline {
+        margin: 0 0 vw_size(15, $current);
+      }
+
+      .new-user-permissions-wrapper {
+        gap: vw_size(8, $current) vw_size(10, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .new-user-popup-wrapper {
+    width: vw_size(500, $current);
+    height: 100%;
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      justify-content: flex-start;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .new-user-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .new-user-form {
+      @include hide-scrollbar;
+      padding-block: vw_size(12, $current) vw_size(6, $current);
+      min-height: vw_size(500, $current);
+      gap: vw_size(12, $current);
+
+      .new-users-permissions-headline {
+        margin: 0;
+        padding: 0;
+        font-size: vw_size(14, $current);
+      }
+
+      .new-user-input-field {
+        height: vw_size(30, $current);
+        margin: vw_size(15, $current) 0;
+      }
+
+      .marketer-dropdown-wrapper {
+        width: 80%;
+      }
+
+      .new-user-permissions-wrapper {
+        gap: vw_size(8, $current) vw_size(10, $current);
+
+        .error-text {
+          position: relative;
+          bottom: 0;
+          width: 100%;
+          margin: 0;
+          margin-inline: 0;
+        }
+
+        &.leads-bitwise {
+          padding-bottom: 0;
+          align-items: flex-start;
+          align-content: flex-start;
+          min-height: vw_size(96, $current);
+        }
+      }
+
+      .new-users-permissions-wrapper {
+        width: 80%;
+        min-height: vw_size(160, $current);
+
+        &.lead-tabs {
+          min-height: vw_size(100, $current);
+        }
+      }
+
+      .drop {
+        margin-top: vw_size(10, $current);
+      }
+
+      .dropdown-input-wrapper {
+        min-height: vw_size(55, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+  .new-user-popup-wrapper {
+    width: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      justify-content: flex-start;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .new-user-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .new-user-form {
+      padding-block: vw_size(12, $current) vw_size(6, $current);
+      min-height: vw_size(500, $current);
+      gap: vw_size(12, $current);
+
+      .new-users-permissions-headline {
+        font-size: vw_size(14, $current);
+      }
+
+      .new-user-input-field {
+        height: vw_size(30, $current);
+        margin: vw_size(15, $current) 0;
+      }
+
+      .new-user-permissions-wrapper {
+        gap: vw_size(8, $current) vw_size(10, $current);
+
+        &.leads-bitwise {
+          min-height: vw_size(94, $current);
+        }
+      }
+
+      .new-users-permissions-wrapper {
+        min-height: vw_size(156, $current);
+
+        &.lead-tabs {
+          min-height: vw_size(94, $current);
+        }
+      }
+
+      .drop {
+        margin-top: vw_size(10, $current);
+      }
+
+      .dropdown-input-wrapper {
+        min-height: vw_size(55, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+  .new-user-popup-wrapper {
+    width: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      justify-content: flex-start;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .new-user-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .new-user-form {
+      padding-block: vw_size(12, $current) vw_size(6, $current);
+      min-height: vw_size(500, $current);
+      gap: vw_size(12, $current);
+
+      .new-users-permissions-headline {
+        font-size: vw_size(14, $current);
+      }
+
+      .new-user-input-field {
+        height: vw_size(30, $current);
+        margin: vw_size(15, $current) 0;
+      }
+
+      .new-user-permissions-wrapper {
+        gap: vw_size(8, $current) vw_size(10, $current);
+
+        &.leads-bitwise {
+          min-height: vw_size(94, $current);
+        }
+      }
+
+      .new-users-permissions-wrapper {
+        min-height: vw_size(160, $current);
+
+        &.lead-tabs {
+          min-height: vw_size(98, $current);
+        }
+      }
+
+      .drop {
+        margin-top: vw_size(10, $current);
+      }
+
+      .dropdown-input-wrapper {
+        min-height: vw_size(55, $current);
+      }
+    }
+  }
+}

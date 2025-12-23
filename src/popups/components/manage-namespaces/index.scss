@@ -1,0 +1,190 @@
+@import '/src/styles/imports';
+
+$current: 1200;
+
+.add-namespace-wrapper {
+  width: vw_size(500, $current);
+
+  .popup-header {
+    border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+    display: flex;
+    justify-content: center;
+    padding: vw_size(20, $current) vw_size(20, $current);
+    background-color: $qualla-blue;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      height: vw_size(3, $current);
+      width: 100%;
+      background: $orange;
+    }
+
+    .add-namespace-headline {
+      color: $white;
+      font-family: $font-bold;
+      font-size: vw_size(24, $current);
+      margin: unset;
+      padding: unset;
+    }
+  }
+
+
+  .add-namespace-body-wrapper {
+    padding: vw_size(20, $current) vw_size(40, $current);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .namespace-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      border: 1px solid rgba($black, 0.1);
+      border-radius: vw_size($border-radius, $current);
+      padding: 0 vw_size(10, $current);
+      margin-bottom: vw_size(8, $current);
+      height: vw_size(42, $current);
+
+      .namespace-actions {
+        display: flex;
+        gap: vw_size(10, $current);
+      }
+
+      .namespace-name {
+        font-size: vw_size(16, $current);
+        font-family: $font;
+      }
+    }
+
+    .texts-input {
+      font-family: $font;
+      padding: vw_size(10, $current) vw_size(15, $current);
+      width: 100%;
+      border-radius: vw_size($border-radius, $current);
+      border: 1px solid $input-border;
+    }
+
+    .field-error-wrapper {
+      margin-bottom: vw_size(20, $current);
+    }
+
+    .add-namespace-button {
+      width: 50%;
+      margin: 0;
+      font-weight: 600;
+      font-size: vw_size(16, $current);
+      padding: vw_size(10, $current) vw_size(10, $current);
+    }
+  }
+}
+
+@media screen and (min-width: $media-desktop-large) {
+  $current: 1600;
+  .add-namespace-wrapper {
+    width: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .add-namespace-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .add-namespace-body-wrapper {
+      padding: vw_size(20, $current) vw_size(40, $current);
+      min-height: vw_size(350, $current);
+
+      .namespace-wrapper {
+        padding: 0 vw_size(10, $current);
+        border-radius: vw_size($border-radius, $current);
+        margin-bottom: vw_size(8, $current);
+        height: vw_size(42, $current);
+
+        .namespace-name {
+          font-size: vw_size(16, $current);
+        }
+      }
+
+      .texts-input {
+        padding: vw_size(10, $current) vw_size(15, $current);
+        border-radius: vw_size($border-radius, $current);
+        font-size: vw_size(16, $current);
+        height: vw_size(42, $current);
+      }
+
+      .field-error-wrapper {
+        margin-bottom: vw_size(20, $current);
+        min-height: vw_size(20, $current);
+      }
+
+      .add-namespace-button {
+        font-size: vw_size(16, $current);
+        padding: vw_size(10, $current) vw_size(10, $current);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $media-desktop-max) {
+  $current: 1920;
+  .add-namespace-wrapper {
+    width: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .add-namespace-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .add-namespace-body-wrapper {
+      padding: vw_size(20, $current) vw_size(40, $current) vw_size(0, $current);
+      min-height: vw_size(350, $current);
+
+      .namespace-wrapper {
+        padding: 0 vw_size(10, $current);
+        border-radius: vw_size($border-radius, $current);
+        margin-bottom: vw_size(8, $current);
+        height: vw_size(42, $current);
+
+        .namespace-name {
+          font-size: vw_size(16, $current);
+        }
+      }
+
+      .texts-input {
+        padding: vw_size(10, $current) vw_size(15, $current);
+        border-radius: vw_size($border-radius, $current);
+        font-size: vw_size(16, $current);
+        height: vw_size(42, $current);
+      }
+
+      .field-error-wrapper {
+        margin-bottom: vw_size(20, $current);
+        min-height: vw_size(20, $current);
+      }
+
+      .add-namespace-button {
+        font-size: vw_size(16, $current);
+        padding: vw_size(10, $current) vw_size(10, $current);
+      }
+    }
+  }
+}

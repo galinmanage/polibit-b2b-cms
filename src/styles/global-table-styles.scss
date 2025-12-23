@@ -1,0 +1,387 @@
+@import "/src/styles/imports.scss";
+
+$current: $mobile;
+
+.underline {
+  border-bottom: 1px solid black;
+}
+
+.top-area {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: vw_size(10, $current);
+}
+
+.table-wrapper {
+  overflow: scroll;
+  max-width: vw_size(1080, $current);
+  border: 1px solid $input-border;
+  border-spacing: 0;
+
+  &.no-radius {
+    overflow: visible;
+    border-radius: 0;
+  }
+
+  .table-cell {
+    position: relative;
+    padding: vw_size(5, $current);
+    font-size: vw_size(14, $current);
+    min-width: vw_size(120, $current);
+
+    &.no-result {
+      width: 100%;
+      text-align: center;
+      padding: vw_size(20, $current) 0;
+      font-family: $font-bold;
+      font-size: vw_size(16, $current);
+    }
+
+    &.header {
+      color: $white;
+      padding: vw_size(15, $current) vw_size(5, $current) vw_size(5, $current);
+      text-align: start;
+      vertical-align: top;
+    }
+
+    &.height {
+      &-100 {
+        height: vw_size(100, $current);
+      }
+    }
+
+    &.size {
+      @for $size from 10 to 1001 {
+        &-#{$size} {
+          width: vw_size($size, $current);
+        }
+      }
+    }
+
+    &.green {
+      background-color: $status-leads-ok;
+    }
+
+    &.blue {
+      background-color: $status-leads-document;
+    }
+
+    &.yellow {
+      background-color: $status-leads-agent;
+    }
+
+    &.orange {
+      background-color: $status-leads-signature;
+    }
+
+    &.red {
+      background-color: $status-leads-blocked;
+    }
+
+    &.white {
+      background-color: $status-leads-new;
+    }
+
+    &.status {
+      font-size: vw_size(12, $current);
+    }
+
+    &.center {
+      text-align: center;
+
+      .custom-checkbox-wrapper {
+        justify-content: center;
+      }
+    }
+
+    &:not(:last-of-type):after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-inline-end: 1px solid $input-border;
+      pointer-events: none;
+    }
+
+    &.header:first-of-type,
+    &:first-of-type {
+      padding-inline: vw_size(7.5, $current);
+    }
+  }
+
+  .table-row {
+    position: relative;
+    font-size: vw_size(14, $current);
+    transition: background-color 400ms;
+
+    &:nth-of-type(2n + 0) {
+      background-color: #eaeaea;
+    }
+
+    &.disabled {
+      opacity: 0.7;
+      background-color: $light-gray;
+      cursor: not-allowed;
+    }
+
+    &.header {
+      background-color: $qualla-blue;
+      font-size: vw_size(14, $current);
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: $orange;
+      }
+    }
+
+    &:not(:last-of-type):after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px solid $input-border;
+      pointer-events: none;
+    }
+
+    &:not(.header):hover {
+      background-color: #d7d7d7;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .top-area {
+    margin-bottom: vw_size(10, $current);
+  }
+
+  .table-wrapper {
+    max-width: vw_size(1080, $current);
+
+    .table-cell {
+      padding: vw_size(5, $current);
+      font-size: vw_size(14, $current);
+      min-width: vw_size(120, $current);
+
+      &.no-result {
+        padding: vw_size(20, $current) 0;
+        font-size: vw_size(16, $current);
+      }
+
+      &.header {
+        padding: vw_size(15, $current) vw_size(5, $current) vw_size(5, $current);
+      }
+
+      &.height {
+        &-100 {
+          height: vw_size(100, $current);
+        }
+      }
+
+      &.size {
+        @for $size from 10 to 501 {
+          &-#{$size} {
+            width: vw_size($size, $current);
+          }
+        }
+      }
+
+      &.status {
+        font-size: vw_size(12, $current);
+      }
+
+      &.header:first-of-type,
+      &:first-of-type {
+        padding-inline: vw_size(7.5, $current);
+      }
+    }
+
+    .table-row {
+      font-size: vw_size(14, $current);
+
+      &.header {
+        font-size: vw_size(14, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .top-area {
+    margin-bottom: vw_size(10, $current);
+  }
+  .table-wrapper {
+    //overflow: hidden;
+    max-width: vw_size(1080, $current);
+    border-radius: vw_size($border-radius, $current);
+
+    .table-cell {
+      padding: vw_size(5, $current);
+      font-size: vw_size(14, $current);
+
+      &.no-result {
+        padding: vw_size(20, $current) 0;
+        font-size: vw_size(16, $current);
+      }
+
+      &.header {
+        padding: vw_size(15, $current) vw_size(5, $current) vw_size(5, $current);
+      }
+
+      &.height {
+        &-100 {
+          height: vw_size(100, $current);
+        }
+      }
+
+      &.size {
+        @for $size from 10 to 1001 {
+          &-#{$size} {
+            width: vw_size($size, $current);
+          }
+        }
+      }
+
+      &.status {
+        font-size: vw_size(12, $current);
+      }
+
+      &.header:first-of-type,
+      &:first-of-type {
+        padding-inline: vw_size(7.5, $current);
+      }
+    }
+
+    .table-row {
+      font-size: vw_size(14, $current);
+
+      &.header {
+        font-size: vw_size(14, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+  .top-area {
+    margin-bottom: vw_size(10, $current);
+  }
+  .table-wrapper {
+    max-width: vw_size(1080, $current);
+    border-radius: vw_size(10, $current);
+
+    .table-cell {
+      padding: vw_size(5, $current);
+      font-size: vw_size(14, $current);
+
+      &.header {
+        padding: vw_size(15, $current) vw_size(5, $current) vw_size(5, $current);
+      }
+
+      &.no-result {
+        padding: vw_size(20, $current) 0;
+        font-size: vw_size(16, $current);
+      }
+
+      &.height {
+        &-100 {
+          height: vw_size(100, $current);
+        }
+      }
+
+      &.size {
+        @for $size from 10 to 1001 {
+          &-#{$size} {
+            width: vw_size($size, $current);
+          }
+        }
+      }
+
+      &.status {
+        font-size: vw_size(12, $current);
+      }
+
+      &.header:first-of-type,
+      &:first-of-type {
+        padding-inline: vw_size(7.5, $current);
+      }
+    }
+
+    .table-row {
+      font-size: vw_size(14, $current);
+
+      &.header {
+        font-size: vw_size(14, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+  .top-area {
+    margin-bottom: vw_size(10, $current);
+  }
+  .table-wrapper {
+    max-width: vw_size(1800, $current);
+    border-radius: vw_size(10, $current);
+
+    .table-cell {
+      padding: vw_size(5, $current);
+      font-size: vw_size(14, $current);
+
+      &.header {
+        padding: vw_size(15, $current) vw_size(5, $current) vw_size(5, $current);
+      }
+
+      &.no-result {
+        padding: vw_size(20, $current) 0;
+        font-size: vw_size(16, $current);
+      }
+
+      &.height {
+        &-100 {
+          height: vw_size(100, $current);
+        }
+      }
+
+      &.size {
+        @for $size from 10 to 1001 {
+          &-#{$size} {
+            width: vw_size($size, $current);
+          }
+        }
+      }
+
+      &.status {
+        font-size: vw_size(12, $current);
+      }
+
+      &.header:first-of-type,
+      &:first-of-type {
+        padding-inline: vw_size(7.5, $current);
+      }
+    }
+
+    .table-row {
+      font-size: vw_size(14, $current);
+
+      &.header {
+        font-size: vw_size(14, $current);
+      }
+    }
+  }
+}

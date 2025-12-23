@@ -1,0 +1,117 @@
+@import "/src/styles/imports.scss";
+
+$current: $mobile;
+
+.login-page-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: $qualla-blue;
+  min-height: calc(100vh - #{(vw_size(80, $current))});
+
+  .login-page-content {
+    height: vw_size(300, $current);
+    width: vw_size(280, $current);
+    background-color: $white;
+    margin-top: vw_size(40, $current);
+    padding: vw_size(20, $current) vw_size(20, $current);
+    border-radius: vw_size(10, $current);
+  }
+
+  .submit-btn {
+    width: 100%;
+    background-color: $qualla-blue;
+    transition: all 200ms ease-in-out;
+    height: vw_size(45, $current);
+    border-radius: vw_size(5, $current);
+
+    &:hover {
+      background-color: $qualla-blue-hover;
+    }
+
+    .submit-btn-text {
+      text-align: center;
+      color: $white;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .login-page-wrapper {
+    min-height: calc(100vh - #{(vw_size(80, $current))});
+
+    .login-page-content {
+      height: vw_size(300, $current);
+      width: vw_size(500, $current);
+      background-color: $white;
+      margin-top: vw_size(40, $current);
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      .submit-btn {
+        height: vw_size(45, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .login-page-wrapper {
+    min-height: calc(100vh - #{(vw_size(80, $current))});
+
+    .login-page-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: vw_size(330, $current);
+      width: vw_size(700, $current);
+      background-color: $white;
+      margin-top: vw_size(40, $current);
+      padding: vw_size(20, $current) vw_size(175, $current);
+
+      .submit-btn {
+        height: vw_size(45, $current);
+        width: vw_size(190, $current);
+      }
+
+      .otp-content {
+        width: 100%;
+
+        form {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+
+  .login-page-wrapper {
+    min-height: calc(100vh - #{(vw_size(80, $current))});
+
+    .login-page-content {
+      height: vw_size(330, $current);
+      width: vw_size(700, $current);
+      background-color: $white;
+      margin-top: vw_size(40, $current);
+      padding: vw_size(20, $current) vw_size(175, $current);
+
+      .submit-btn {
+        height: vw_size(45, $current);
+        width: vw_size(190, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+
+  .login-page-wrapper {
+    min-height: calc(100vh - #{(vw_size(80, $current))});
+  }
+}

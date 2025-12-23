@@ -1,0 +1,50 @@
+@import 'imports';
+
+//misc styles
+.shekel:after {
+  content: '\20aa';
+  display: inline-block;
+  font-family: Arial;
+  font-weight: 100;
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: vw_size(1, 320);
+  @media (min-width: $desktop) {
+    margin-right: vw_size(1, 1920);
+  }
+}
+
+.teal-button {
+  background: $react-teal;
+  color: white;
+  transition: all 100ms ease;
+
+  &:hover {
+    background: $orange;
+  }
+}
+
+.error-text {
+  color: $error-message-color;
+  font-size: vw_size(12, $mobile);
+  position: absolute;
+  right: 0;
+  bottom: - vw_size(16,$mobile);
+
+  @media (min-width: $media-tablet) {
+    font-size: vw_size(12, $tablet);
+    bottom: - vw_size(16,$tablet);
+  }
+  @media (min-width: $media-desktop) {
+    font-size: vw_size(12, $desktop);
+    bottom: - vw_size(16,$desktop);
+  }
+  @media (min-width: $media-desktop-large) {
+    font-size: vw_size(12, $desktop-large);
+    bottom: - vw_size(16,$desktop-large);
+  }
+  @media (min-width: $media-desktop-max) {
+    font-size: vw_size(12, $desktop-max);
+    bottom: - vw_size(16,$desktop-max);
+  }
+}

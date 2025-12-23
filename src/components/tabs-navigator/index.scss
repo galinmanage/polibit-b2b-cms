@@ -1,0 +1,74 @@
+@import '/src/styles/imports.scss';
+
+$current: $mobile;
+.tabs-navigator-wrapper {
+  width: fit-content;
+  padding: vw_size(2, $current) vw_size(15, $current);
+  text-align: center;
+  margin-inline: auto;
+
+  .tab-navigator-item {
+    font-family: $font;
+    font-size: vw_size(14, $current);
+    padding-inline-end: vw_size(10, $current);
+
+    &:hover {
+      font-family: $font-bold;
+    }
+
+    &.active {
+      font-family: $font-bold;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .tabs-navigator-wrapper {
+    padding: vw_size(5, $current) 0;
+    border-bottom: 1px solid $input-border;
+
+    .tab-navigator-item {
+      font-size: vw_size(14, $current);
+      padding: vw_size(5, $current) vw_size(10, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .tabs-navigator-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: vw_size(5, $current) 0;
+
+    .tab-navigator-item {
+      font-size: vw_size(16, $current);
+      padding: vw_size(5, $current) vw_size(10, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+  .tabs-navigator-wrapper {
+
+    .tab-navigator-item {
+      font-size: vw_size(16, $current);
+      padding: vw_size(5, $current) vw_size(10, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+  .tabs-navigator-wrapper {
+    padding: vw_size(5, $current) 0;
+
+    .tab-navigator-item {
+      font-size: vw_size(16, $current);
+      padding: vw_size(5, $current) vw_size(10, $current);
+    }
+  }
+}

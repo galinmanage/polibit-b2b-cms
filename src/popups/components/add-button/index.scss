@@ -1,0 +1,85 @@
+@import "/src/styles/imports.scss";
+
+$current: $mobile;
+
+.popup-button-wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.popup-button {
+  transition: all 200ms ease-in-out;
+  font-family: $font-bold;
+  color: $white;
+  background-color: $qualla-blue;
+  padding: vw_size(5, $current) vw_size(10, $current);
+  margin: vw_size(5, $current) 0;
+  font-size: vw_size(15, $current);
+  border-radius: vw_size($border-radius, $current);
+  width: vw_size(150, $current);
+  height: vw_size(40, $current);
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $primary-disabled;
+    color: #9a9a9a;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .popup-button {
+    padding: vw_size(5, $current) vw_size(10, $current);
+    margin: vw_size(5, $current) 0;
+    font-size: vw_size(15, $current);
+    border-radius: vw_size($border-radius, $current);
+    width: vw_size(150, $current);
+    height: vw_size(40, $current);
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .popup-button {
+    padding: vw_size(5, $current) vw_size(10, $current);
+    margin: vw_size(5, $current) 0;
+    font-size: vw_size(15, $current);
+    border-radius: vw_size($border-radius, $current);
+    width: vw_size(150, $current);
+    height: vw_size(40, $current);
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+
+  .popup-button {
+    padding: vw_size(5, $current) vw_size(10, $current);
+    margin: vw_size(5, $current) 0;
+    font-size: vw_size(15, $current);
+    border-radius: vw_size($border-radius, $current);
+    width: vw_size(150, $current);
+    height: vw_size(40, $current);
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+
+  .popup-button {
+    padding: vw_size(5, $current) vw_size(10, $current);
+    margin: vw_size(5, $current) 0;
+    font-size: vw_size(15, $current);
+    border-radius: vw_size($border-radius, $current);
+    width: vw_size(150, $current);
+    height: vw_size(40, $current);
+  }
+}

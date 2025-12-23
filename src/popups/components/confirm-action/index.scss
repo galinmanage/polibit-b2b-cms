@@ -1,0 +1,197 @@
+@import "styles/imports.scss";
+
+$current: $mobile;
+
+$transition-duration: 400ms;
+
+.confirm-action-popup-wrapper {
+  width: 100%;
+
+  .popup-header {
+    border-radius: vw_size(25, $current) vw_size(25, $current) 0 0;
+    display: flex;
+    justify-content: center;
+    padding: vw_size(10, $current) 0;
+    background-color: $qualla-blue;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      height: vw_size(3, $current);
+      width: 100%;
+      background: $orange;
+    }
+
+    .confirm-action-headline {
+      color: $white;
+      font-family: $font-bold;
+      font-size: vw_size(24, $current);
+      margin: unset;
+      padding: unset;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .confirm-action-popup-wrapper {
+    width: vw_size(400, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      justify-content: flex-start;
+      padding: vw_size(10, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .confirm-action-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .confirm-action-popup-wrapper {
+    width: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .confirm-action-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .confirm-action-wrapper {
+      padding: vw_size(30, $current);
+
+      .popup-text {
+        font-size: vw_size(16, $current);
+      }
+
+      .buttons-wrapper {
+        display: flex;
+        gap: vw_size(24, $current);
+
+        .confirm-button .popup-button {
+          background-color: $status-general-success;
+
+          &:hover {
+            background-color: #00b852;
+          }
+        }
+
+        .cancel-button .popup-button {
+          background-color: $status-general-error;
+
+          &:hover {
+            background-color: #ee0011;
+          }
+        }
+
+        .confirm-button,
+        .cancel-button {
+          width: 100%;
+          justify-content: center;
+          margin: vw_size(40, $current) auto 0;
+
+          .popup-button {
+            transition: background $transition-duration;
+            margin: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+
+  .confirm-action-popup-wrapper {
+    width: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .confirm-action-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .confirm-action-wrapper {
+      padding: vw_size(30, $current);
+
+      .popup-text {
+        font-size: vw_size(16, $current);
+      }
+
+      .buttons-wrapper {
+        gap: vw_size(24, $current);
+
+        .confirm-button,
+        .cancel-button {
+          margin: vw_size(40, $current) auto 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+
+  .confirm-action-popup-wrapper {
+    width: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .confirm-action-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .confirm-action-wrapper {
+      padding: vw_size(30, $current);
+
+      .popup-text {
+        font-size: vw_size(16, $current);
+      }
+
+      .buttons-wrapper {
+        gap: vw_size(24, $current);
+
+        .confirm-button,
+        .cancel-button {
+          margin: vw_size(40, $current) auto 0;
+        }
+      }
+    }
+  }
+}

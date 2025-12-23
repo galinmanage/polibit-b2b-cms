@@ -1,0 +1,91 @@
+@import "/src/styles/imports.scss";
+
+$current: $desktop;
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: vw_size(15, $current);
+
+  .crumb-container {
+    display: flex;
+    align-items: center;
+
+    .arrow {
+      width: vw_size(12, $current);
+      height: vw_size(12, $current);
+      margin-inline-end: vw_size(7, $current);
+    }
+
+    .crumb {
+      font-size: vw_size(18, $current);
+      margin-inline-end: vw_size(7, $current);
+      cursor: pointer;
+
+      &:hover {
+        font-family: $font-bold;
+      }
+
+      &::before {
+        display: block;
+        content: attr(title);
+        font-family: $font-bold;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+      }
+    }
+  }
+
+  :last-child {
+    :last-child {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+  .custom-breadcrumbs {
+    margin-bottom: vw_size(15, $current);
+
+    .crumb-container {
+      .arrow {
+        width: vw_size(12, $current);
+        height: vw_size(12, $current);
+        margin-inline-end: vw_size(7, $current);
+      }
+
+      .crumb {
+        font-size: vw_size(18, $current);
+        margin-inline-end: vw_size(7, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  .custom-breadcrumbs {
+    margin-bottom: vw_size(15, $current);
+
+    .crumb-container {
+      .arrow {
+        width: vw_size(12, $current);
+        height: vw_size(12, $current);
+        margin-inline-end: vw_size(7, $current);
+      }
+
+      .crumb {
+        font-size: vw_size(14, $current);
+        margin-inline-end: vw_size(7, $current);
+      }
+    }
+  }
+}

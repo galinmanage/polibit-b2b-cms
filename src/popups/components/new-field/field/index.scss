@@ -1,0 +1,215 @@
+@import '/src/styles/imports.scss';
+
+$current: $mobile;
+
+.new-field-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 95%;
+
+  .custom-dropdown {
+    margin-top: vw_size(25, $current);
+
+    .options-wrapper {
+      &.open {
+        max-height: unset;
+      }
+
+      .dropdown-option-item {
+        &.active {
+          font-family: $font
+        }
+      }
+    }
+  }
+
+  .level-title {
+    font-family: $font-bold;
+    font-size: vw_size(16, $current);
+    background-color: $qualla-blue;
+    color: $white;
+    padding: vw_size(8, $current);
+    margin-top: vw_size(12, $current);
+  }
+
+  .input-container {
+    position: relative;
+    padding-bottom: vw_size(10, $current);
+
+    .remove-input-icon-container {
+      position: absolute;
+      cursor: pointer;
+      left: vw_size(10, $current);
+      width: vw_size(10, $current);
+      z-index: 1;
+    }
+
+  }
+
+  .add-input-icon-container {
+    height: vw_size(10, $current);
+    width: vw_size(10, $current);
+    margin-right: vw_size(5, $current);
+    fill: $white;
+  }
+}
+
+.add-field-button {
+  display: flex;
+  cursor: pointer;
+  width: vw_size(100, $current);
+}
+
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .new-field-container {
+    .custom-dropdown {
+      margin-top: vw_size(25, $current);
+
+      .dropdown-option-item {
+        &.active {
+          font-family: $font
+        }
+      }
+    }
+
+    .level-title {
+      font-size: vw_size(16, $current);
+      margin-top: vw_size(12, $current);
+      padding: vw_size(8, $current);
+    }
+
+    .input-container {
+      padding-bottom: vw_size(10, $current);
+
+      .remove-input-icon-container {
+        left: vw_size(10, $current);
+        width: vw_size(10, $current);
+      }
+    }
+
+    .add-input-icon-container {
+      height: vw_size(10, $current);
+      width: vw_size(10, $current);
+      margin-right: vw_size(5, $current);
+    }
+  }
+  .add-field-button {
+    width: vw_size(100, $current);
+  }
+}
+
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .new-field-container {
+    display: flex;
+    justify-content: center;
+
+    .custom-dropdown {
+      margin-top: vw_size(25, $current);
+
+      .dropdown-option-item {
+        &.active {
+          font-family: $font
+        }
+      }
+    }
+
+    .level-title {
+      font-size: vw_size(16, $current);
+      margin-top: vw_size(12, $current);
+      padding: vw_size(8, $current);
+    }
+
+    .add-field-button {
+      width: vw_size(100, $current);
+    }
+
+    .input-container {
+      padding-bottom: vw_size(10, $current);
+
+      .remove-input-icon-container {
+        left: vw_size(10, $current);
+        width: vw_size(10, $current);
+      }
+    }
+
+    .add-input-icon-container {
+      height: vw_size(10, $current);
+      width: vw_size(10, $current);
+      margin-right: vw_size(5, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+
+  .new-field-container {
+    .custom-dropdown {
+      margin-top: vw_size(25, $current);
+    }
+
+    .level-title {
+      font-size: vw_size(16, $current);
+      margin-top: vw_size(12, $current);
+      padding: vw_size(8, $current);
+    }
+
+    .input-container {
+      padding-bottom: vw_size(10, $current);
+
+      .remove-input-icon-container {
+        left: vw_size(10, $current);
+        width: vw_size(10, $current);
+      }
+    }
+
+    .add-input-icon-container {
+      height: vw_size(10, $current);
+      width: vw_size(10, $current);
+      margin-right: vw_size(5, $current);
+    }
+  }
+  .add-field-button {
+    width: vw_size(140, $current);
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+
+  .new-field-container {
+    .custom-dropdown {
+      margin-top: vw_size(25, $current);
+    }
+
+    .level-title {
+      font-size: vw_size(16, $current);
+      margin-top: vw_size(12, $current);
+      padding: vw_size(8, $current);
+    }
+
+    .input-container {
+      padding-bottom: vw_size(10, $current);
+
+      .remove-input-icon-container {
+        left: vw_size(10, $current);
+        width: vw_size(10, $current);
+      }
+    }
+
+    .add-input-icon-container {
+      height: vw_size(10, $current);
+      width: vw_size(10, $current);
+      margin-right: vw_size(5, $current);
+    }
+  }
+  .add-field-button {
+    width: vw_size(140, $current);
+  }
+
+}

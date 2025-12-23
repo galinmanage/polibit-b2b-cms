@@ -1,0 +1,86 @@
+@import '../../../styles/imports.scss';
+
+
+.animated-input-wrapper {
+  position: relative;
+
+  .placeholder {
+    position: absolute;
+    right: 0;
+    transition: all 100ms ease-out;
+    transform-origin: right;
+    pointer-events: none;
+
+    &.animated {
+      transform: translate(0, - vw_size(20, $mobile)) scale(0.9);
+    }
+  }
+
+
+  .input {
+    width: 100%;
+    direction: rtl;
+
+    &:focus + .placeholder {
+      transform: translate(0, - vw_size(20, $mobile)) scale(0.9);
+    }
+
+  }
+}
+
+@media (min-width: $media-tablet) {
+  .animated-input-wrapper {
+
+    .placeholder {
+
+      &.animated {
+        transform: translate(0, - vw_size(20, $tablet)) scale(0.9);
+      }
+    }
+
+    .input {
+
+      &:focus + .placeholder {
+        transform: translate(0, - vw_size(20, $tablet)) scale(0.9);
+      }
+    }
+  }
+}
+
+@media (min-width: $media_desktop) {
+  .animated-input-wrapper {
+
+    .placeholder {
+
+      &.animated {
+        transform: translate(0, - vw_size(20, $desktop)) scale(0.9);
+      }
+    }
+
+    .input {
+
+      &:focus + .placeholder {
+        transform: translate(0, - vw_size(20, $desktop)) scale(0.9);
+      }
+    }
+  }
+}
+
+@media (min-width: $media_desktop_large) {
+  .animated-input-wrapper {
+
+    .placeholder {
+
+      &.animated {
+        transform: translate(0, - vw_size(20, $desktop_large)) scale(0.9);
+      }
+    }
+
+    .input {
+
+      &:focus + .placeholder {
+        transform: translate(0, - vw_size(20, $desktop_large)) scale(0.9);
+      }
+    }
+  }
+}

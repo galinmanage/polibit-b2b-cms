@@ -1,0 +1,191 @@
+@import "/src/styles/imports";
+
+$current: 1200;
+
+.duplicate-namespace-wrapper {
+  width: vw_size(500, $current);
+
+  .popup-header {
+    border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+    display: flex;
+    justify-content: center;
+    padding: vw_size(20, $current) vw_size(20, $current);
+    background-color: $qualla-blue;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      height: vw_size(3, $current);
+      width: 100%;
+      background: $orange;
+    }
+
+    .duplicate-namespace-headline {
+      color: $white;
+      font-size: vw_size(24, $current);
+      font-family: $font-bold;
+      margin: unset;
+      padding: unset;
+    }
+  }
+
+  .duplicate-namespace-body-wrapper {
+    padding: vw_size(20, $current) vw_size(40, $current);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-height: vw_size(350, $current);
+
+    .duplicate-namespace-info {
+      width: 100%;
+      margin-bottom: vw_size(24, $current);
+      text-align: center;
+      font-size: vw_size(16, $current);
+
+      strong {
+        font-family: $font-bold;
+      }
+    }
+
+    .duplicate-type-selection {
+      display: flex;
+      width: 100%;
+      margin-bottom: vw_size(20, $current);
+      border: 1px solid rgba($black, 0.1);
+      border-radius: vw_size($border-radius, $current);
+      overflow: hidden;
+
+      .duplicate-type-option {
+        flex: 1;
+        padding: vw_size(10, $current);
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:not(:last-child) {
+          border-right: 1px solid rgba($black, 0.1);
+        }
+
+        &:hover {
+          background-color: rgba($qualla-blue, 0.05);
+        }
+
+        &.selected {
+          background-color: $qualla-blue;
+          color: $white;
+        }
+      }
+    }
+
+    .dropdown-input {
+      height: vw_size(38, $current);
+      padding: vw_size(10, $current) vw_size(15, $current);
+      border-radius: vw_size($border-radius, $current);
+    }
+
+    .duplicate-to-existing,
+    .duplicate-to-new {
+      width: 100%;
+      margin-bottom: vw_size(20, $current);
+    }
+
+    .namespace-select-wrapper {
+      width: 100%;
+    }
+
+    .duplicate-to-new {
+      .texts-input {
+        height: vw_size(38, $current);
+        width: 100%;
+        border-radius: vw_size($border-radius, $current);
+        border: 1px solid $input-border;
+        padding: vw_size(10, $current) vw_size(15, $current);
+        font-size: vw_size(16, $current);
+      }
+    }
+
+    .field-error-wrapper {
+      margin-bottom: vw_size(20, $current);
+      min-height: vw_size(20, $current);
+    }
+
+    .duplicate-actions {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: auto;
+      padding-top: vw_size(20, $current);
+      gap: vw_size(20, $current);
+
+      .cancel-button,
+      .duplicate-button {
+        flex: 1;
+        padding: vw_size(10, $current);
+        font-weight: 600;
+        font-size: vw_size(16, $current);
+      }
+
+      .cancel-button {
+        background-color: $white;
+        color: $qualla-blue;
+        border: 1px solid $qualla-blue;
+
+        &:hover {
+          background-color: rgba($qualla-blue, 0.05);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $media-desktop-large) {
+  $current: 1600;
+  .duplicate-namespace-wrapper {
+    width: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .duplicate-namespace-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .duplicate-namespace-body-wrapper {
+      padding: vw_size(20, $current) vw_size(40, $current);
+    }
+  }
+}
+
+@media screen and (min-width: $media-desktop-max) {
+  $current: 1920;
+  .duplicate-namespace-wrapper {
+    width: vw_size(500, $current);
+
+    .popup-header {
+      border-radius: vw_size(10, $current) vw_size(10, $current) 0 0;
+      padding: vw_size(20, $current) vw_size(20, $current);
+
+      &:before {
+        height: vw_size(3, $current);
+      }
+
+      .duplicate-namespace-headline {
+        font-size: vw_size(24, $current);
+      }
+    }
+
+    .duplicate-namespace-body-wrapper {
+      padding: vw_size(20, $current) vw_size(40, $current);
+    }
+  }
+}

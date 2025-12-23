@@ -1,0 +1,103 @@
+@import '../../../styles/imports';
+
+.animated-textarea-wrapper {
+  position: relative;
+
+  .textarea {
+    height: vw_size(80, $mobile);
+    width: 100%;
+    border: 1px solid $text-color;
+    border-radius: 0;
+    padding: vw_size(5, $mobile);
+    font-family: Arial;
+    font-size: 14px;
+
+    &:focus + .placeholder {
+      transform: translate(vw_size(5, $mobile), - vw_size(24,$mobile)) scale(0.9);
+    }
+  }
+
+  .placeholder {
+    font-size: inherit;
+    position: absolute;
+    top: vw_size(5, $mobile);
+    right: vw_size(5, $mobile);
+    transition: all 100ms ease-out;
+    transform-origin: right;
+    pointer-events: none;
+
+    &.animated {
+      transform: translate(vw_size(5, $mobile), - vw_size(24,$mobile)) scale(0.9);
+    }
+  }
+
+}
+
+@media (min-width: $media-tablet) {
+  .animated-textarea-wrapper {
+    .textarea {
+      height: vw_size(100, $tablet);
+      padding: vw_size(5, $tablet);
+
+      &:focus + .placeholder {
+        transform: translate(vw_size(5, $tablet), - vw_size(24,$tablet)) scale(0.9);
+      }
+    }
+
+    .placeholder {
+      top: vw_size(5, $tablet);
+      right: vw_size(5, $tablet);
+
+      &.animated {
+        transform: translate(vw_size(5, $tablet), - vw_size(24,$tablet)) scale(0.9);
+      }
+    }
+
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .animated-textarea-wrapper {
+    .textarea {
+      height: vw_size(100, $desktop);
+      padding: vw_size(5, $desktop);
+
+      &:focus + .placeholder {
+        transform: translate(vw_size(5, $desktop), - vw_size(24,$desktop)) scale(0.9);
+      }
+    }
+
+    .placeholder {
+      top: vw_size(5, $desktop);
+      right: vw_size(5, $desktop);
+
+      &.animated {
+        transform: translate(vw_size(5, $desktop), - vw_size(24,$desktop)) scale(0.9);
+      }
+    }
+
+  }
+}
+
+@media (min-width: $media-desktop-large) {
+  .animated-textarea-wrapper {
+    .textarea {
+      height: vw_size(100, $desktop-large);
+      padding: vw_size(5, $desktop-large);
+
+      &:focus + .placeholder {
+        transform: translate(vw_size(5, $desktop-large), - vw_size(24,$desktop-large)) scale(0.9);
+      }
+    }
+
+    .placeholder {
+      top: vw_size(5, $desktop-large);
+      right: vw_size(5, $desktop-large);
+
+      &.animated {
+        transform: translate(vw_size(5, $desktop-large), - vw_size(24,$desktop-large)) scale(0.9);
+      }
+    }
+
+  }
+}

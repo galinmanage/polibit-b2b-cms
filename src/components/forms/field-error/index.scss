@@ -1,0 +1,30 @@
+@import "/src/styles/imports";
+
+.field-error-wrapper {
+  z-index: 1000;
+  @include Opening-Transition-Invisible-State();
+  width: 100%;
+
+  &.visible {
+    @include Opening-Transition-Visible-State();
+    overflow: visible;
+  }
+
+  &.centered {
+    text-align: center;
+  }
+
+  &.floating {
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
+
+  .error-message {
+    display: block;
+    margin: rem_size(4) rem_size(4) 0;
+    color: $ui-text-error;
+    font-size: rem_size(14);
+    font-weight: 400;
+  }
+}

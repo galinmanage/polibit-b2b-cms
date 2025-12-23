@@ -1,0 +1,23 @@
+.burger_btn {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer;
+    width: 5vw;
+    height: 5vw;
+}
+
+@media screen and (min-width: 768px) {
+    .burger_btn {
+        width: 2.8vw;
+        height: 2.8vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .burger_btn {
+        display: none;
+    }
+}

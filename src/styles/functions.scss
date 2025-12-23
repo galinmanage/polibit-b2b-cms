@@ -1,0 +1,21 @@
+@use "sass:math";
+
+@function vw_size($px_size, $design_width) {
+  $vw_size: ($px_size / $design_width) * 100;
+  @return $vw_size + vw;
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+
+@function relative_size($size) {
+  $percentage: math.div(100%, 62.5%) * 10;
+  $relative_size: math.div(strip-units($size), $percentage);
+  @return $relative_size;
+}
+
+@function rem_size($size) {
+  @return relative_size($size) + rem;
+}

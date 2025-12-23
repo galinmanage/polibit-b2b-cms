@@ -1,0 +1,125 @@
+@import "/src/styles/imports.scss";
+
+$current: $desktop;
+
+$width: 50;
+$height: $width / 2;
+$border-radius: $height / 2;
+
+.toggle-button-wrapper {
+  display: flex;
+  align-items: center;
+
+  .toggle-text {
+    @include input-dropdown-label;
+    font-family: $font;
+    font-size: vw_size(14, $current);
+  }
+
+  .toggle-label-wrapper {
+    width: 100%;
+
+    .toggle {
+      display: inline-block;
+      cursor: pointer;
+
+      &.disabled {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .toggle-input {
+    display: none;
+
+    &:checked ~ .toggle-fill {
+      background: $status-general-success;
+    }
+
+    &:checked ~ .toggle-fill::after {
+      transform: translateX(vw_size($height + 1, $current));
+    }
+  }
+
+  .toggle-fill {
+    position: relative;
+    width: vw_size($width, $current);
+    height: vw_size($height, $current);
+    border-radius: vw_size($border-radius, $current);
+    background: $status-general-error;
+    transition: background 0.2s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: vw_size(-1, $current);
+      height: vw_size($height, $current);
+      width: vw_size($height, $current);
+      background: $white;
+      box-shadow: 0 0 vw_size(10, $current) rgba(0, 0, 0, 0.25);
+      border-radius: vw_size($border-radius, $current);
+      transition: transform 0.2s;
+    }
+  }
+}
+
+@media (min-width: $media-desktop-large) {
+  $current: $desktop-large;
+
+  .toggle-button-wrapper {
+    .toggle-text {
+      font-size: vw_size(14, $current);
+    }
+
+    .toggle-input {
+      &:checked ~ .toggle-fill::after {
+        transform: translateX(vw_size($height + 1, $current));
+      }
+    }
+
+    .toggle-fill {
+      width: vw_size($width, $current);
+      height: vw_size($height, $current);
+      border-radius: vw_size($border-radius, $current);
+
+      &::after {
+        left: vw_size(-1, $current);
+        height: vw_size($height, $current);
+        width: vw_size($height, $current);
+        border-radius: vw_size($border-radius, $current);
+        box-shadow: 0 0 vw_size(10, $current) rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_max) {
+  $current: $desktop_max;
+
+  .toggle-button-wrapper {
+    .toggle-text {
+      font-size: vw_size(14, $current);
+    }
+
+    .toggle-input {
+      &:checked ~ .toggle-fill::after {
+        transform: translateX(vw_size($height + 1, $current));
+      }
+    }
+
+    .toggle-fill {
+      width: vw_size($width, $current);
+      height: vw_size($height, $current);
+      border-radius: vw_size($border-radius, $current);
+
+      &::after {
+        left: vw_size(-1, $current);
+        height: vw_size($height, $current);
+        width: vw_size($height, $current);
+        border-radius: vw_size($border-radius, $current);
+        box-shadow: 0 0 vw_size(10, $current) rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}

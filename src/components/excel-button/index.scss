@@ -1,0 +1,92 @@
+@import "/src/styles/imports.scss";
+
+$current: $mobile;
+
+.excel-export-button {
+  @include filter-comps-radius;
+  background-color: #21a366;
+  color: $white;
+  transition: all 200ms;
+  padding-inline: vw_size(8, $current);
+  gap: vw_size(8, $current);
+
+  .icon-wrapper {
+    width: vw_size(12, $current);
+    height: vw_size(12, $current);
+  }
+
+  .export-button-text {
+    @include filter-font-size;
+    line-height: 100%;
+  }
+
+  &:hover {
+    background-color: #1d8c58;
+  }
+
+  &.error-button {
+    background-color: #ff0033;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .excel-export-button {
+    padding-inline: vw_size(8, $current);
+    gap: vw_size(8, $current);
+
+    .icon-wrapper {
+      width: vw_size(18, $current);
+      height: vw_size(18, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .excel-export-button {
+    width: vw_size(140, $current);
+    height: vw_size(30, $current);
+    padding-inline: vw_size(8, $current);
+    gap: vw_size(8, $current);
+
+    .icon-wrapper {
+      width: vw_size(18, $current);
+      height: vw_size(18, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+
+  .excel-export-button {
+    width: vw_size(145, $current);
+    height: vw_size(30, $current);
+    padding-inline: vw_size(8, $current);
+    gap: vw_size(8, $current);
+
+    .icon-wrapper {
+      width: vw_size(18, $current);
+      height: vw_size(18, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+
+  .excel-export-button {
+    width: vw_size(145, $current);
+    height: vw_size(30, $current);
+    padding-inline: vw_size(8, $current);
+    gap: vw_size(8, $current);
+
+    .icon-wrapper {
+      width: vw_size(18, $current);
+      height: vw_size(18, $current);
+    }
+  }
+}

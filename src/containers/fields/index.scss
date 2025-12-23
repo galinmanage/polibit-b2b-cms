@@ -1,0 +1,137 @@
+@import 'src/styles/imports';
+
+$current: $mobile;
+.fields-page-container {
+  .add-field-button {
+    @include filter-comps-radius;
+    padding: vw_size(8, $current);
+    margin: 0;
+
+    .add-field-icon-container {
+      display: flex;
+      align-items: center;
+      margin-inline-start: vw_size(5, $current);
+
+      .add-field-icon {
+        width: vw_size(10, $current);
+        fill: $white;
+      }
+    }
+
+    .add-text {
+      @include filter-font-size;
+      font-family: $font-light;
+    }
+  }
+
+  .buttons-container {
+    @include filter-comps-gap;
+    display: flex;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .fields-page-container {
+    .add-field-button {
+      padding: vw_size(8, $current);
+
+      .add-field-icon-container {
+        margin-inline-start: vw_size(5, $current);
+
+        .add-field-icon {
+          width: vw_size(10, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  $width: 140;
+
+  .fields-page-container {
+    display: flex;
+    flex-direction: column;
+    gap: vw_size(14, $current);
+
+    .add-field-button {
+      padding: vw_size(8, $current);
+      height: vw_size(30, $current);
+      width: vw_size($width, $current);
+
+      .add-field-icon-container {
+        margin-inline-start: vw_size(5, $current);
+
+        .add-field-icon {
+          width: vw_size(12, $current);
+        }
+      }
+    }
+
+    .buttons-container {
+      .excel-export-button {
+        width: vw_size($width, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+  $width: 145;
+
+  .fields-page-container {
+    gap: vw_size(14, $current);
+
+    .add-field-button {
+      padding: vw_size(8, $current);
+      height: vw_size(30, $current);
+      width: vw_size($width, $current);
+
+      .add-field-icon-container {
+        margin-inline-start: vw_size(5, $current);
+
+        .add-field-icon {
+          width: vw_size(12, $current);
+        }
+      }
+    }
+
+    .buttons-container {
+      .excel-export-button {
+        width: vw_size($width, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+  $width: 145;
+
+  .fields-page-container {
+    gap: vw_size(14, $current);
+
+    .add-field-button {
+      padding: vw_size(8, $current);
+      height: vw_size(30, $current);
+      width: vw_size($width, $current);
+
+      .add-field-icon-container {
+        margin-inline-start: vw_size(5, $current);
+
+        .add-field-icon {
+          width: vw_size(12, $current);
+        }
+      }
+    }
+
+    .buttons-container {
+      .excel-export-button {
+        width: vw_size($width, $current);
+      }
+    }
+  }
+}

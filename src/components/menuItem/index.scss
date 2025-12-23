@@ -1,0 +1,137 @@
+@import "styles/imports";
+
+$current: $mobile;
+
+.link {
+  display: block;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    background-color: $qualla-blue-hover;
+    color: $white;
+  }
+
+  &.active {
+    .menu-item {
+      background-color: $qualla-blue;
+      color: $white;
+    }
+  }
+
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      padding: vw_size(15, $current) vw_size(25, $current);
+
+      .icon {
+        width: vw_size(15, $current);
+        height: vw_size(15, $current);
+        transition: all 250ms ease-out;
+
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .link {
+    .menu-item {
+      .item-row {
+        padding: vw_size(20, $current) vw_size(25, $current);
+        font-size: vw_size(20, $current);
+
+        .icon {
+          width: vw_size(15, $current);
+          height: vw_size(15, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .link {
+    .menu-item {
+      .item-row {
+        padding: vw_size(20, $current) vw_size(25, $current);
+        font-size: vw_size(20, $current);
+
+        .icon {
+          width: vw_size(15, $current);
+          height: vw_size(15, $current);
+        }
+      }
+
+      .collapse-wrapper {
+        .item-row {
+          padding: 0;
+          min-height: vw_size(45, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-large) {
+  $current: $desktop-large;
+
+  .link {
+    .menu-item {
+      .item-row {
+        padding: vw_size(20, $current) vw_size(25, $current);
+        font-size: vw_size(20, $current);
+
+        .icon {
+          width: vw_size(15, $current);
+          height: vw_size(15, $current);
+        }
+      }
+
+      .collapse-wrapper {
+        .item-row {
+          padding: 0;
+          min-height: vw_size(45, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-max) {
+  $current: $desktop-max;
+
+  .link {
+    .menu-item {
+      .item-row {
+        padding: vw_size(20, $current) vw_size(25, $current);
+        font-size: vw_size(20, $current);
+
+        .icon {
+          width: vw_size(15, $current);
+          height: vw_size(15, $current);
+        }
+      }
+
+      .collapse-wrapper {
+        .item-row {
+          padding: 0;
+          min-height: vw_size(45, $current);
+        }
+      }
+    }
+  }
+}
