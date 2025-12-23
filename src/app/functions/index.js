@@ -132,3 +132,51 @@ export function clsx(...classNames) {
    */
   return classNames.filter((c) => c).join(' ');
 }
+
+export function formatILS(
+  value,
+  {
+    separationSpace = true,
+    withoutSymbol = false,
+    returnDecimal = false,
+    oppositeDir = false,
+    ...customSettings
+  } = {},
+) {
+  value = Number(value);
+
+  // Check if the value is numeric (integer or float)
+  if (typeof value !== 'number' || isNaN(value)) {
+    return NaN;
+  }
+
+  // Determine if the value is an integer or has a fractional part
+  const hasFractionalPart = value % 1 !== 0;
+
+  // Use Intl.NumberFormat to format the value as ILS, showing decimals only if not zero
+  const result = new Intl.NumberFormat('he-IL', {
+    style: returnDecimal ? 'decimal' : 'currency',
+    currency: 'ILS',
+    minimumFractionDigits: hasFractionalPart ? 1 : 0, // Show decimal point only if there is a fractional part
+    maximumFractionDigits: hasFractionalPart ? 2 : 0, // Adjust accordingly
+    useGrouping: !returnDecimal,
+    ...customSettings,
+  }).format(value);
+
+  if (returnDecimal) {
+    const formattedNumber = value.toFixed(hasFractionalPart ? 2 : 0);
+    return hasFractionalPart ? parseFloat(formattedNumber) : parseInt(formattedNumber);
+  }
+
+  const resultNumber = result.replace(/[^0-9.,]/g, '').trim();
+
+  if (withoutSymbol) {
+    return resultNumber;
+  }
+
+  if (oppositeDir) {
+    return `₪${separationSpace ? ' ' : ''}${resultNumber}`;
+  }
+
+  return `${resultNumber}${separationSpace ? ' ' : ''}₪`;
+}
