@@ -65,7 +65,8 @@ pipeline {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: SSH_CREDENTIALS_ID, keyFileVariable: 'SSH_KEY')]) {
                     script {
-                        def branch = env.BRANCH_NAME
+                        def branchFullName = env.BRANCH_NAME
+                        def branch = branchFullName.replaceFirst(/^jenkins-/, '')
                         if (!(branch in ['stage', 'preprod', 'production'])) error("Unsupported branch ${branch}")
                         sh """
                             ssh -i '$SSH_KEY' -o StrictHostKeyChecking=no ${REMOTE_USER}@${BUILD_SERVER} '
@@ -87,7 +88,8 @@ pipeline {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: SSH_CREDENTIALS_ID, keyFileVariable: 'SSH_KEY')]) {
                     script {
-                        def branch = env.BRANCH_NAME
+                        def branchFullName = env.BRANCH_NAME
+                        def branch = branchFullName.replaceFirst(/^jenkins-/, '')
                         def localDir = "build-${branch}"
                         sh '''
                             chmod 600 "$SSH_KEY"
@@ -102,7 +104,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    def branch       = env.BRANCH_NAME
+                    def branchFullName = env.BRANCH_NAME
+                    def branch = branchFullName.replaceFirst(/^jenkins-/, '')
                     def targetServer = branch == 'stage' ? STAGE_SERVER : branch == 'preprod' ? PREPROD_SERVER : PROD_SERVER
                     def targetDir    = branch == 'stage' ? STAGE_PATH : branch == 'preprod' ? PREPROD_PATH : PROD_PATH
                     def localDir     = "build-${branch}"
