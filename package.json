@@ -19,8 +19,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build:stage": "node build.js stage /cms",
-    "build:preprod": "node build.js preprod /cms",
+    "build:stage": "node build.js stage",
+    "build:preprod": "node build.js preprod",
     "build:production": "node build.js production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
