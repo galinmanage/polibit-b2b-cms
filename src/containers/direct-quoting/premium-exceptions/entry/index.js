@@ -7,19 +7,19 @@ const PremiumExceptionEntry = ({ data = {} }) => {
 
   return (
     <tr className="table-row">
-      <td className="table-cell center">{data.company_car_id}</td>
-      <td className="table-cell center">{data.min_driver_age}</td>
-      <td className="table-cell center">{data.max_driver_age}</td>
-      <td className="table-cell center">{data.min_license_years}</td>
-      <td className="table-cell center">{data.max_license_years}</td>
-      <td className="table-cell center">{data.max_claims_3y}</td>
+      <td className="table-cell center">{data.companyCarId}</td>
+      <td className="table-cell center">{data.minDriverAge}</td>
+      <td className="table-cell center">{data.maxDriverAge}</td>
+      <td className="table-cell center">{data.minLicenseYears}</td>
+      <td className="table-cell center">{data.maxLicenseYears}</td>
+      <td className="table-cell center">{data.maxClaims3y}</td>
       <td className="table-cell center">
-        {data.named_drivers_only ? translate('cms_generic_yes') : translate('cms_generic_no')}
+        {data.namedDriversOnly ? translate('cms_generic_yes') : translate('cms_generic_no')}
       </td>
       <td className="table-cell center">
-        {data.is_high_risk_area ? translate('cms_generic_yes') : translate('cms_generic_no')}
+        {data.isHighRiskArea ? translate('cms_generic_yes') : translate('cms_generic_no')}
       </td>
-      <td className="table-cell center">{formatILS(data.final_price)}</td>
+      <td className="table-cell center">{formatILS(data.finalPrice)}</td>
     </tr>
   );
 };
